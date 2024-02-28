@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <kotlin.version>2.0.0-Beta4</kotlin.version>
     </properties>
 
     <dependencies>
@@ -19,6 +20,15 @@
             <artifactId>reactor-core</artifactId>
             <version>3.4.14</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
     </dependencies>
+
+    <build>
+
+    </build>
 
 </project>
