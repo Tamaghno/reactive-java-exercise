@@ -1,5 +1,10 @@
 package io.javabrains.reactiveworkshop;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class Exercise1 {
 
     public static void main(String[] args) {
@@ -67,16 +72,32 @@ public class Exercise1 {
 
         System.out.println("***********************************");
 
-        StreamSources.userStream()
-                .filter(
-                        userId ->
-                                StreamSources.intNumbersStream()
-                                                            .anyMatch(number -> number == userId.getId()))
+        StreamSources.userStream().filter(userId -> StreamSources.intNumbersStream().anyMatch(number -> number == userId.getId()))
                 .forEach(System.out::println);
 
         System.out.println("***********************************");
 
 
+        List<Integer> intList = Arrays.asList(1,2,3,4,5,6,7,8);
+
+        intList.stream().forEach(number -> System.out.println(number));
+        System.out.println("***********************************");
+        intList.stream().filter(i -> i < 6).forEach(number -> System.out.println(number));
+        System.out.println("***********************************");
+        System.out.println(intList.stream().filter(i -> i < 6).collect(Collectors.toList()));
+
+
+        System.out.println("***********************************");
+
+
+
+        String names[] = {"A","B","C","D"};
+        List<String> namelist = Arrays.asList("A","B","C","D");
+        namelist.stream().forEach(name -> System.out.print(name+":"));
+
+        Stream.of(namelist).forEach(name -> System.out.print(name+":"));
+
+//        System.out.println(Stream.of(names));
 
     }
 
